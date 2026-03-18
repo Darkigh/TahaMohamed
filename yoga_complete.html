@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Path of Light Yoga Studio</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #F5F5F5;
+      color: #3F2860;
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    header {
+      background-color: #9BC1C2;
+      text-align: center;
+    }
+
+    h1 {
+      line-height: 200%;
+    }
+
+    nav {
+      text-align: center;
+      font-weight: bold;
+      padding: 8px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #3F2860;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .studio {
+      font-style: italic;
+    }
+
+    footer {
+      background-color: #9BC1C2;
+      font-size: 0.60em;
+      font-style: italic;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    #wrapper {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    /* ── page sections ── */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+
+    <header>
+      <h1>Path of Light Yoga Studio</h1>
+    </header>
+
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('classes')">Classes</a>
+      <a href="#" onclick="showPage('schedule')">Schedule</a>
+      <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <main id="home" class="page active">
+      <h2>Find Your Inner Light</h2>
+      <p>
+        <span class="studio">Path of Light Yoga Studio</span> provides all levels of yoga practice
+        in a tranquil, peaceful environment. Whether you are new to yoga or an experienced
+        practitioner, our dedicated instructors can develop a practice to meet your needs.
+        Let your inner light shine at the <span class="studio">Path Of Light Yoga Studio</span>.
+      </p>
+      <ul>
+        <li>Hatha, Vinyasa, and Restorative Yoga Classes</li>
+        <li>Drop-ins welcome</li>
+        <li>Mats, blocks, and blankets provided</li>
+        <li>Relax in our Serenity Lounge before or after your class</li>
+      </ul>
+      <p>
+        Path of Light Yoga Studio<br>
+        612 Serenity Way<br>
+        El Dorado, CA 96162<br><br>
+        888-555-5555
+      </p>
+    </main>
+
+    <!-- CLASSES PAGE -->
+    <main id="classes" class="page">
+      <h2>Yoga Classes</h2>
+      <dl>
+        <dt><strong>Gentle Hatha Yoga</strong></dt>
+        <dd>Intended for beginners and anyone wishing a grounded foundation in the practice of yoga,
+        this 60 minute class of poses and slow movement focuses on asana (proper alignment and posture),
+        pranayama (breath work), and guided meditation to foster your mind and body connection.</dd>
+
+        <dt><strong>Vinyasa Yoga</strong></dt>
+        <dd>Although designed for intermediate to advanced students, beginners are welcome to sample
+        this 60 minute class that focuses on breath-synchronized movement — you will inhale and exhale
+        as you flow energetically through yoga poses.</dd>
+
+        <dt><strong>Restorative Yoga</strong></dt>
+        <dd>This 90 minute class features very slow movement and long poses that are supported by a
+        chair or wall. This calming, restorative experience is suitable for students of any level of
+        experience. This practice can be a perfect way to help rehabilitate an injury.</dd>
+      </dl>
+    </main>
+
+    <!-- SCHEDULE PAGE -->
+    <main id="schedule" class="page">
+      <h2>Class Schedule</h2>
+      <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse; width:100%; color:#3F2860;">
+        <tr style="background-color:#9BC1C2;">
+          <th>Day</th>
+          <th>Time</th>
+          <th>Class</th>
+          <th>Instructor</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td>9:00 AM</td>
+          <td>Gentle Hatha Yoga</td>
+          <td>Sara</td>
+        </tr>
+        <tr style="background-color:#e8f4f4;">
+          <td>Wednesday</td>
+          <td>6:00 PM</td>
+          <td>Vinyasa Yoga</td>
+          <td>James</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>10:00 AM</td>
+          <td>Restorative Yoga</td>
+          <td>Sara</td>
+        </tr>
+        <tr style="background-color:#e8f4f4;">
+          <td>Saturday</td>
+          <td>8:00 AM</td>
+          <td>Gentle Hatha Yoga</td>
+          <td>James</td>
+        </tr>
+      </table>
+    </main>
+
+    <!-- CONTACT PAGE -->
+    <main id="contact" class="page">
+      <h2>Contact Us</h2>
+      <p>We would love to hear from you!</p>
+      <p>
+        <strong>Address:</strong><br>
+        Path of Light Yoga Studio<br>
+        612 Serenity Way<br>
+        El Dorado, CA 96162
+      </p>
+      <p><strong>Phone:</strong> 888-555-5555</p>
+      <p><strong>Email:</strong> yourfirstname@yourlastname.com</p>
+    </main>
+
+    <footer>
+      <p>Copyright &copy; 2016 Path of Light Yoga<br>
+      yourfirstname@yourlastname.com</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function showPage(id) {
+      var pages = document.querySelectorAll('.page');
+      for (var i = 0; i < pages.length; i++) {
+        pages[i].classList.remove('active');
+      }
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

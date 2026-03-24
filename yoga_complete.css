@@ -1,193 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Path of Light Yoga Studio</title>
+  <title>HW3 - Q1 and Q2 Solutions</title>
   <meta charset="utf-8">
-  <style>
-    body {
-      background-color: #F5F5F5;
-      color: #3F2860;
-      font-family: Verdana, Arial, sans-serif;
-    }
-
-    header {
-      background-color: #9BC1C2;
-      text-align: center;
-    }
-
-    h1 {
-      line-height: 200%;
-    }
-
-    nav {
-      text-align: center;
-      font-weight: bold;
-      padding: 8px 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #3F2860;
-      margin: 0 10px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .studio {
-      font-style: italic;
-    }
-
-    footer {
-      background-color: #9BC1C2;
-      font-size: 0.60em;
-      font-style: italic;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    #wrapper {
-      width: 80%;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    /* ── page sections ── */
-    .page {
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
-  </style>
 </head>
 <body>
-  <div id="wrapper">
 
-    <header>
-      <h1>Path of Light Yoga Studio</h1>
-    </header>
+<!-- ============================================================
+     ANSWER 1
+     The background color is dark blue #0066CC so the text color
+     must be white #FFFFFF to give good contrast and be readable.
+     The header is missing font-family so we add Arial, sans-serif.
+     The two missing tags are </style> to close the CSS block
+     and </head> to close the head section.
+     ============================================================ -->
 
-    <nav>
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('classes')">Classes</a>
-      <a href="#" onclick="showPage('schedule')">Schedule</a>
-      <a href="#" onclick="showPage('contact')">Contact</a>
-    </nav>
+<!-- ANSWER 1 CODE START -->
 
-    <!-- HOME PAGE -->
-    <main id="home" class="page active">
-      <h2>Find Your Inner Light</h2>
-      <p>
-        <span class="studio">Path of Light Yoga Studio</span> provides all levels of yoga practice
-        in a tranquil, peaceful environment. Whether you are new to yoga or an experienced
-        practitioner, our dedicated instructors can develop a practice to meet your needs.
-        Let your inner light shine at the <span class="studio">Path Of Light Yoga Studio</span>.
-      </p>
-      <ul>
-        <li>Hatha, Vinyasa, and Restorative Yoga Classes</li>
-        <li>Drop-ins welcome</li>
-        <li>Mats, blocks, and blankets provided</li>
-        <li>Relax in our Serenity Lounge before or after your class</li>
-      </ul>
-      <p>
-        Path of Light Yoga Studio<br>
-        612 Serenity Way<br>
-        El Dorado, CA 96162<br><br>
-        888-555-5555
-      </p>
-    </main>
-
-    <!-- CLASSES PAGE -->
-    <main id="classes" class="page">
-      <h2>Yoga Classes</h2>
-      <dl>
-        <dt><strong>Gentle Hatha Yoga</strong></dt>
-        <dd>Intended for beginners and anyone wishing a grounded foundation in the practice of yoga,
-        this 60 minute class of poses and slow movement focuses on asana (proper alignment and posture),
-        pranayama (breath work), and guided meditation to foster your mind and body connection.</dd>
-
-        <dt><strong>Vinyasa Yoga</strong></dt>
-        <dd>Although designed for intermediate to advanced students, beginners are welcome to sample
-        this 60 minute class that focuses on breath-synchronized movement — you will inhale and exhale
-        as you flow energetically through yoga poses.</dd>
-
-        <dt><strong>Restorative Yoga</strong></dt>
-        <dd>This 90 minute class features very slow movement and long poses that are supported by a
-        chair or wall. This calming, restorative experience is suitable for students of any level of
-        experience. This practice can be a perfect way to help rehabilitate an injury.</dd>
-      </dl>
-    </main>
-
-    <!-- SCHEDULE PAGE -->
-    <main id="schedule" class="page">
-      <h2>Class Schedule</h2>
-      <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse; width:100%; color:#3F2860;">
-        <tr style="background-color:#9BC1C2;">
-          <th>Day</th>
-          <th>Time</th>
-          <th>Class</th>
-          <th>Instructor</th>
-        </tr>
-        <tr>
-          <td>Monday</td>
-          <td>9:00 AM</td>
-          <td>Gentle Hatha Yoga</td>
-          <td>Sara</td>
-        </tr>
-        <tr style="background-color:#e8f4f4;">
-          <td>Wednesday</td>
-          <td>6:00 PM</td>
-          <td>Vinyasa Yoga</td>
-          <td>James</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>10:00 AM</td>
-          <td>Restorative Yoga</td>
-          <td>Sara</td>
-        </tr>
-        <tr style="background-color:#e8f4f4;">
-          <td>Saturday</td>
-          <td>8:00 AM</td>
-          <td>Gentle Hatha Yoga</td>
-          <td>James</td>
-        </tr>
-      </table>
-    </main>
-
-    <!-- CONTACT PAGE -->
-    <main id="contact" class="page">
-      <h2>Contact Us</h2>
-      <p>We would love to hear from you!</p>
-      <p>
-        <strong>Address:</strong><br>
-        Path of Light Yoga Studio<br>
-        612 Serenity Way<br>
-        El Dorado, CA 96162
-      </p>
-      <p><strong>Phone:</strong> 888-555-5555</p>
-      <p><strong>Email:</strong> yourfirstname@yourlastname.com</p>
-    </main>
-
-    <footer>
-      <p>Copyright &copy; 2016 Path of Light Yoga<br>
-      yourfirstname@yourlastname.com</p>
-    </footer>
-
-  </div>
-
-  <script>
-    function showPage(id) {
-      var pages = document.querySelectorAll('.page');
-      for (var i = 0; i < pages.length; i++) {
-        pages[i].classList.remove('active');
-      }
-      document.getElementById(id).classList.add('active');
+  <!-- body sets the page background to dark blue and text to white -->
+  <style>
+    body {
+      background-color: #0066CC; /* dark blue background */
+      color: #FFFFFF;            /* white text - good contrast on dark blue */
     }
-  </script>
+
+    /* header uses Arial font as required */
+    header {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+  <header>
+    <h1>Trillium Media Design</h1>
+  </header>
+
+  <p>Our professional staff takes pride in its working relationship with our clients
+  by offering personalized services that listen to their needs, develop their target
+  areas, and incorporate these items into a website that works.</p>
+
+<!-- ANSWER 1 CODE END -->
+
+
+
+
+<!-- ============================================================
+     ANSWER 2
+     The error is that the closing tag of the style block was
+     written as <style> instead of </style>.
+     Without the forward slash / the browser thinks a new style
+     block is opening so the CSS never closes properly and the
+     page cannot display correctly.
+     The fix is simply changing <style> to </style> at the end
+     of the CSS block.
+     ============================================================ -->
+
+<!-- ANSWER 2 CODE START -->
+
+  <!-- this style block is now correctly closed with </style> -->
+  <style>
+    body {
+      background-color: #000066;        /* dark navy background */
+      color: #CCCCCC;                   /* light gray text */
+      font-family: Arial, sans-serif;   /* Arial font for all text */
+      font-size: 1.2em;                 /* slightly larger text size */
+    }
+  </style>   <!-- FIXED: was <style> before, now correctly </style> -->
+
+  <header>
+    <h1>Trillium Media Design</h1>
+  </header>
+
+  <main>
+    <p>Our professional staff takes pride in its working relationship with our clients
+    by offering personalized services that listen to their needs, develop their target
+    areas, and incorporate these items into a website that works.</p>
+  </main>
+
+<!-- ANSWER 2 CODE END -->
+
 
 </body>
 </html>

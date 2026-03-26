@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taha Saeed Mohamed - Homework Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      color: #333;
+      line-height: 1.7;
+    }
+    h1 { font-size: 2rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; color: #555; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+    p, li { font-size: 1rem; color: #444; }
+    ul { padding-left: 20px; }
+    hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+    footer { margin-top: 40px; font-size: .85rem; color: #999; }
+    
+    /* Homework section styles */
+    .homework-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .homework-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .homework-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .homework-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .homework-subject {
+      color: #4CAF50;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .homework-date {
+      color: #999;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    
+    .homework-description {
+      color: #666;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
+    
+    .files-section {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .files-title {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .file-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    
+    .file-item {
+      display: inline-block;
+      background: #e3f2fd;
+      margin: 5px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    
+    .file-link {
+      text-decoration: none;
+      color: #1976d2;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .file-link:hover {
+      text-decoration: underline;
+    }
+    
+    .upload-btn {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      margin-top: 5px;
+    }
+    
+    .upload-btn:hover {
+      background-color: #0b7dda;
+    }
+    
+    .file-input {
+      display: none;
+    }
+    
+    .empty-message {
+      text-align: center;
+      color: #999;
+      padding: 40px;
+      font-style: italic;
+    }
+    
+    .homework-stats {
+      background: #e8f5e8;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    
+    .status-pending {
+      background-color: #ff9800;
+      color: white;
+    }
+    
+    .status-completed {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    .delete-file-btn {
+      background: none;
+      border: none;
+      color: #f44336;
+      cursor: pointer;
+      margin-left: 5px;
+      font-size: 0.8rem;
+    }
+    
+    .delete-file-btn:hover {
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Taha Saeed Taha Mohamed</h1>
+  <p>Software Engineering Student — Near East University, Cyprus</p>
+
+<div class="profile-container">
+    <img class="profile-image" src="https://github.com/Darkigh/darkigh.github.io/blob/main/WhatsApp%20Image%202026-03-10%20at%209.51.47%20PM.jpeg" alt="Taha Saeed">
+  </div>
+
+  <hr/>
+
+  <h2>📚 My Homework Assignments</h2>
+  
+  <div id="homeworkStats" class="homework-stats"></div>
+  
+  <ul id="homeworkList" class="homework-list"></ul>
+
+  <hr/>
+
+  <h2>Education</h2>
+  <p><strong>B.Sc. Software Engineering</strong><br/>
+  Near East University (NEU), Nicosia, Cyprus — 2024 to Present</p>
+
+  <h2>Technical Skills</h2>
+  <ul>
+    <li>Python</li>
+    <li>C++</li>
+    <li>Java</li>
+    <li>HTML/CSS/JavaScript</li>
+  </ul>
+
+  <h2>Professional Interests</h2>
+  <ul>
+    <li>Cybersecurity</li>
+    <li>Software Development</li>
+    <li>Networking &amp; Systems</li>
+  </ul>
+
+  <h2>Hobbies</h2>
+  <ul>
+    <li>Video Games</li>
+    <li>Watching Movies</li>
+    <li>Reading Stories</li>
+    <li>Working</li>
+  </ul>
+
+  <footer>&copy; 2026 Taha Saeed Taha Mohamed</footer>
+
+  <script>
+    // ============================================
+    // 📝 HOMEWORK DATA - Edit this section to add/remove homework
+    // ============================================
+    
+    let homeworks = [
+      {
+        id: 1,
+        title: "Data Structures Assignment",
+        subject: "Data Structures and Algorithms",
+        dueDate: "2026-04-10",
+        description: "Implement a binary search tree with insert, delete, and search operations. Add documentation and test cases.",
+        status: "pending",
+        files: [] // Files will be stored here
+      },
+      {
+        id: 2,
+        title: "Web Development Project",
+        subject: "Web Technologies",
+        dueDate: "2026-04-15",
+        description: "Create a personal portfolio website with HTML, CSS, and JavaScript. Must be responsive.",
+        status: "pending",
+        files: []
+      },
+      {
+        id: 3,
+        title: "Database Design",
+        subject: "Database Management Systems",
+        dueDate: "2026-04-05",
+        description: "Design an ER diagram for a library management system and implement SQL queries.",
+        status: "completed",
+        files: []
+      },
+      { 
+        id: 4,
+        title: "Database Design",
+        subject: "Database Management Systems",
+        dueDate: "2026-04-05",
+        description: "Design an ER diagram for a library management system and implement SQL queries.",
+        status: "completed",
+        files: []
+      },
+      { 
+        id: 5,
+        title: "Database Design",
+        subject: "Database Management Systems",
+        dueDate: "2026-04-05",
+        description: "Design an ER diagram for a library management system and implement SQL queries.",
+        status: "completed",
+        files: []
+      }
+    ];
+    
+    // Load saved files from localStorage
+    function loadFiles() {
+      const savedFiles = localStorage.getItem('homeworkFiles');
+      if (savedFiles) {
+        const filesData = JSON.parse(savedFiles);
+        homeworks.forEach(homework => {
+          if (filesData[homework.id]) {
+            homework.files = filesData[homework.id];
+          }
+        });
+      }
+    }
+    
+    // Save files to localStorage
+    function saveFiles() {
+      const filesData = {};
+      homeworks.forEach(homework => {
+        if (homework.files && homework.files.length > 0) {
+          filesData[homework.id] = homework.files;
+        }
+      });
+      localStorage.setItem('homeworkFiles', JSON.stringify(filesData));
+    }
+    
+    // Upload file for a specific homework
+    function uploadFile(homeworkId, file) {
+      if (!file) return;
+      
+      // Check file size (max 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File is too large! Maximum size is 10MB.');
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const fileData = {
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          data: e.target.result,
+          uploadDate: new Date().toLocaleString()
+        };
+        
+        const homework = homeworks.find(h => h.id === homeworkId);
+        if (homework) {
+          if (!homework.files) homework.files = [];
+          homework.files.push(fileData);
+          saveFiles();
+          displayHomework();
+          alert(`File "${file.name}" uploaded successfully!`);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+    
+    // Delete file from homework
+    function deleteFile(homeworkId, fileIndex) {
+      if (confirm('Are you sure you want to delete this file?')) {
+        const homework = homeworks.find(h => h.id === homeworkId);
+        if (homework && homework.files[fileIndex]) {
+          homework.files.splice(fileIndex, 1);
+          saveFiles();
+          displayHomework();
+        }
+      }
+    }
+    
+    // Download file
+    function downloadFile(fileData) {
+      const link = document.createElement('a');
+      link.href = fileData.data;
+      link.download = fileData.name;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    
+    // Format file size
+    function formatFileSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+    
+    // Display homework in the list
+    function displayHomework() {
+      const homeworkList = document.getElementById('homeworkList');
+      const statsDiv = document.getElementById('homeworkStats');
+      
+      const totalHomeworks = homeworks.length;
+      const pendingHomeworks = homeworks.filter(h => h.status === "pending").length;
+      const completedHomeworks = homeworks.filter(h => h.status === "completed").length;
+      const totalFiles = homeworks.reduce((sum, h) => sum + (h.files ? h.files.length : 0), 0);
+      
+      if (totalHomeworks === 0) {
+        statsDiv.innerHTML = 'No homework assignments yet. Add some in the code! 📝';
+        homeworkList.innerHTML = '<li class="empty-message">No homework added yet. Add homework in the JavaScript array!</li>';
+        return;
+      }
+      
+      statsDiv.innerHTML = `
+        📊 Total Homework: ${totalHomeworks} | 
+        ⏳ Pending: ${pendingHomeworks} | 
+        ✅ Completed: ${completedHomeworks} |
+        📎 Files: ${totalFiles}
+      `;
+      
+      // Create homework list HTML
+      let html = '';
+      homeworks.forEach(homework => {
+        const statusBadge = homework.status === 'completed' 
+          ? '<span class="status-badge status-completed">✅ Completed</span>' 
+          : '<span class="status-badge status-pending">⏳ Pending</span>';
+        
+        // Generate files HTML
+        let filesHtml = '';
+        if (homework.files && homework.files.length > 0) {
+          filesHtml = '<div class="files-section"><div class="files-title">📎 Attached Files:</div><ul class="file-list">';
+          homework.files.forEach((file, index) => {
+            filesHtml += `
+              <li class="file-item">
+                <button class="file-link" onclick="downloadFile(homeworks.find(h => h.id === ${homework.id}).files[${index}])">
+                  📄 ${escapeHtml(file.name)}
+                </button>
+                <span style="font-size: 0.7rem; color: #999;">(${formatFileSize(file.size)})</span>
+                <button class="delete-file-btn" onclick="deleteFile(${homework.id}, ${index})">❌</button>
+              </li>
+            `;
+          });
+          filesHtml += '</ul></div>';
+        }
+        
+        html += `
+          <li class="homework-item">
+            <div class="homework-title">
+              📌 ${escapeHtml(homework.title)}
+              ${statusBadge}
+            </div>
+            <div class="homework-subject">📚 ${escapeHtml(homework.subject)}</div>
+            <div class="homework-date">📅 Due: ${formatDate(homework.dueDate)}</div>
+            <div class="homework-description">📝 ${escapeHtml(homework.description)}</div>
+            ${filesHtml}
+            <div class="files-section">
+              <input type="file" id="fileInput_${homework.id}" class="file-input" accept=".pdf,.doc,.docx,.txt,.jpg,.png,.zip">
+              <button class="upload-btn" onclick="document.getElementById('fileInput_${homework.id}').click()">📎 Upload File</button>
+            </div>
+          </li>
+        `;
+      });
+      
+      homeworkList.innerHTML = html;
+      
+      // Add event listeners for file inputs
+      homeworks.forEach(homework => {
+        const fileInput = document.getElementById(`fileInput_${homework.id}`);
+        if (fileInput) {
+          fileInput.onchange = function(e) {
+            if (e.target.files && e.target.files[0]) {
+              uploadFile(homework.id, e.target.files[0]);
+              fileInput.value = ''; // Reset input
+            }
+          };
+        }
+      });
+    }
+    
+    // Format date to be more readable
+    function formatDate(dateString) {
+      if (!dateString || dateString === "No due date set") return dateString || "No due date set";
+      
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const date = new Date(dateString);
+      
+      if (isNaN(date.getTime())) return dateString;
+      
+      return date.toLocaleDateString(undefined, options);
+    }
+    
+    // Helper function to prevent XSS attacks
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Load files and display homework when page loads
+    loadFiles();
+    displayHomework();
+  </script>
+
+</body>
+</html>
